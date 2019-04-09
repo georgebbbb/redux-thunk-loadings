@@ -4,7 +4,7 @@ const LOADING = '_LOADING'
 
 export default function loadings(name, func) {
   return function (dispatch) {
-    if (typeof action !== 'function') {
+    if (typeof dispatch !== 'function') {
       throw new TypeError('dispatch should be a function')
     }
 
@@ -12,7 +12,7 @@ export default function loadings(name, func) {
 
     const promise = func(dispatch)
 
-    if (isPromise(promise)) {
+    if (!isPromise(promise)) {
       throw new TypeError('need return a promise')
     }
 
