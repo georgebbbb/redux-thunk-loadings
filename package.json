@@ -1,0 +1,42 @@
+{
+  "name": "redux-thunk-loadings",
+  "version": "0.0.1",
+  "description": "A loading wrapper for redux-thunk ",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist",
+    "prepare": "npm run clean && npm run build",
+    "build": "rollup -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgebbbb/redux-thunk-loadings.git"
+  },
+  "keywords": [
+    "redux",
+    "redux-thunk",
+    "loading",
+    "loadings",
+    "redux-thunk-loadings"
+  ],
+  "author": "Jarvan Yeung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/georgebbbb/redux-thunk-loadings/issues"
+  },
+  "homepage": "https://github.com/georgebbbb/redux-thunk-loadings#readme",
+  "dependencies": {
+    "is-promise": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.9.0",
+    "rollup-plugin-babel": "^4.3.2"
+  }
+}
