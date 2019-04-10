@@ -46,7 +46,6 @@ export const listPosts = () => loadings('listPosts', () => {
 #### Finally
 
 ```js
-  
   @connect(
     ({ loadings }) => ({
       loadings
