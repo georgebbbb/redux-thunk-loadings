@@ -1,6 +1,6 @@
 {
   "name": "redux-thunk-loadings",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A loading wrapper for redux-thunk ",
   "main": "dist/index.js",
   "scripts": {
