@@ -42,3 +42,23 @@ export const listPosts = () => loadings('listPosts', () => {
   return listPosts()
 })
 ```
+
+#### Finally
+
+```js
+  
+  @connect(
+    ({ loadings }) => ({
+      loadings
+    })
+  )
+  Class PostList extends Component {
+    render() {
+      const { loadings } = this.props
+      return (
+        loadings.listPosts ? <Loading /> : null
+      )
+    }
+  }
+```
+
