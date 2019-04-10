@@ -22,4 +22,23 @@ const store = createStore(
 ## Motivation
 In most cases, loading is necessary when we request API. redux-thunk-loadings is a way to reduce boilerplate
 
+#### Before
+```js
+export const setListPostsLoading = (isLoading) => ({
+  type: 'SET_LIST_POSTS_LOADING',
+  isLoading
+})
 
+export const listPosts = (dispatch) => {
+  dispatch(setListPostsLoading(true))
+  return listPosts().then(
+    () => dispatch(setListPostsLoading(false))
+  )
+}
+```
+#### After
+```js
+export const listPosts = () => loadings('listPosts', () => {
+  return listPosts()
+})
+```
