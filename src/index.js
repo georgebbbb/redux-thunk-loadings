@@ -3,17 +3,18 @@ import isPromise from 'is-promise'
 const LOADING = '_LOADING'
 
 export default function loadings(name, func) {
-  return function (dispatch) {
+  return function (...args) {
+    const dispatch = args[0]
     if (typeof dispatch !== 'function') {
       throw new TypeError('dispatch should be a function')
     }
 
     dispatch({ type: LOADING, name, loading: true })
 
-    const promise = func(dispatch)
+    const promise = func(...args)
 
     if (!isPromise(promise)) {
-      throw new TypeError('need return a promise')
+      throw new TypeError('Expected return a promise')
     }
 
     promise.then(
